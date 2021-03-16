@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Support System For Increasing Crop Yield By Crop Rotation</title>
+
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <!-- Font Awesome JS -->
+    <script src="https://kit.fontawesome.com/728d1d3dec.js" crossorigin="anonymous"></script>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="svgs">
+        <img src="{{ url_for('static',filename='imgs/bg_svg.svg') }}">
+    </div>
+    <div class="page" id="part1">
+        <div class="info">
+            <div class="heading">
+                <div class="title text-primary">Support System For Increasing Crop Yield</div>
+                <div class="title-support">using Crop Rotation & Machine Learning</div>
+            </div>
+            <div class="dev">
+                <div class="text-primary">
+                    <i class="far fa-file-code"></i>&nbsp;Developed by:
+                </div>
+                <ul>
+                    <li>Srivatsan V</li>    
+                    <li>Sujith S </li>
+                    <li>Seshai Hari</li>
+                </ul>
+            </div>
+            <div class="btn-grp">
+                <a href="#part3" class="try">
+                    Try it!
+                </a>
+            </div>
+            
+        </div>
+        <div class="imgContainer">
+            <!-- <img src="imgs/farm1.jpg" alt=""> -->
+            <img src="{{ url_for('static',filename='imgs/flowers.svg') }}" alt="">
+        </div>
+        <div class="scrollIndicator"></div>
+    </div>
+    <div class="page" id="part2">
+        <div class="card myCard">
+            <div class="myCard-img">
+                <img src="{{ url_for('static',filename='imgs/input.svg') }}" alt="">
+            </div>
+            <div class="myCard-title text-blue">Enter details</div>
+            <div class="myCard-body ">Provide information for the crop like Soil Humidity,Soil pH and the Previous Crop grown</div>
+        </div>
+        <div class="card myCard">
+            <div class="myCard-img">
+                <img src="{{ url_for('static',filename='imgs/weather.svg') }}" alt="">
+            </div>
+            <div class="myCard-title text-green">Live weather Fetch</div>
+            <div class="myCard-body ">Current weather details like the temperature, humidity, and rainfall are fetched automatically from the internet to be used for prediction</div>
+        </div>
+        <div class="card myCard">
+            <div class="myCard-img">
+                <img src="{{ url_for('static',filename='imgs/model.svg') }}" alt="">
+            </div>
+            <div class="myCard-title text-orange">Prediction</div>
+            <div class="myCard-body ">A Decision Tree ML model, trained on agricultural data, is used to predict the crop to be grown</div>
+        </div>
+        <div class="scrollIndicator"></div>
+    </div>
+    <div class="container p-5 page" id="part3">
+        <div class="imgContainer">
+            <img src="{{ url_for('static',filename='imgs/plant.svg') }}" alt="">
+        </div>
+        <div class="card shadow-lg col-6 p-0 mx-auto">
+            <div class="card-header text-primary text-center">
+                <h3><u>Crop Yield Predictor</u></h3>
+            </div>
+            <div class="card-body">
+                <h1 class="text-center">Crop Recommended For Maximum Yield </h1>
+        <form action="/" method="post">
+        <input class="form-control" type="text" name="Soil Humidity" placeholder="Soil Humidity">
+        <input class="form-control" type="text" name="Soil pH" placeholder="Soil pH">
+        <input class="form-control" type="text" name="Previous Crop" placeholder="Previous Crop">
+        <input class="btn btn-primary" type="submit" value="Make prediction">
+    </form>
+    
+            </div>
+            <div class="card-footer" id="prediction">
+                {% if sentiment %}
+        <p>{{sentiment}}</p>
+    {% endif %}
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+
+</html>

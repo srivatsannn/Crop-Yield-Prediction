@@ -1,36 +1,21 @@
+# Crop-Yield-Prediction-using-ML
 
-<html>
-  <head>
-    
-     Crop-prediction-using-Machine-Learning
-    
-  </head>
-  <body>
-  <ol type="1">
-    <li> Data Collation
+A simple Web application developed in order to provide the farmers/users an approximation on how much amount of crop yield will be produced depending upon the given input. 
+The application uses a Random Forest Machine Learning model, which was trained on over 20 years of data from 30 districts of Maharashtra, along with automatic live weather fetching for prediction. The model achieved 
+an accuracy of around 86% and can be even further improved with more data.
 
-<ul>
-  
-<li>At first the Air humidity, Air temperature, Soil moisture, Soil pH and the GPS sensor modules are integrated with the NodeMCU platform into a portable kit. This kit is installed in the farm to gather the respective data of the soil. The data gathered is transferred in real time to firebase database for storage and further processing. 
-<li>The atmospheric humidity, temperature, soil moisture, soil pH are sent as it is to the database. The latitude and longitude sent by the GPS module is retrieved in the form of which state they fall under. This enables us to collect the rainfall of that place in the previous year.
-  </ul>
-<li>	Data Processing Using Machine Learning
+## Usage
+- Make sure you have WAMP / XAMPP installed on your machine
+- Clone the repo 
+- Ensure Apache server is running
+- Run index.php through localhost
+- Select the `district`, `Crop`, `Soil` and enter the `Area` 
+- Click on `Predict`
+- Wait for a few seconds
+- The results will appear below the predict button
 
-<ul>
-  
-<li>	Crop Prediction:
-<li>	Price Prediction:
-  </ul>
-<li>	Implementation using Android Application
+```Web link will be available soon...untill then```
+Check out the preview
 
-<p>After the predicted data gets reflected in the firebase database, the farmers can view it in their mobile application.</p>
-<p>They can know what crop to cultivate and what price at which the crops should be sold to earn reasonable profit for the farmers</p>
-<p>They can also view the necessary nutrients and fertilizers that the crop would need for its healthy growth</p>
-<p>Any drastic change in the environmental factors could be notified to the farmers immediately</p>
-<div>
-  <li> Results
-    The result of the android application can be seen <a href="https://github.com/Priyabrata017/Crop-prediction-using-Machine-Learning/tree/master/Results">here</a>
-    <img src="https://github.com/Priyabrata017/Crop-prediction-using-Machine-Learning/blob/master/Results/Mango/mango%20app.jpeg?raw=true" alt="Mango">
-    </div>
-</body>
-</html>
+## Preview
+![](https://github.com/VaibhavSaini19/Crop-Yield-Prediction-using-ML/blob/master/CYP.png)
